@@ -16,6 +16,7 @@ import com.FYP.shramik1.Service.LoginService;
 
 @RestController
 @RequestMapping("login")
+@CrossOrigin("*")
 public class LoginController {
 
 	@Autowired
