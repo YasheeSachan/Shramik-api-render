@@ -12,5 +12,7 @@ public interface WorkerRepository extends MongoRepository<Worker, BigInteger>{
 
 	List<Worker> findBysubCategory(String subcategory);
 
+	String deleteByUserName(String userName);
+
 
 }

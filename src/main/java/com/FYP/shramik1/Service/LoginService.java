@@ -6,8 +6,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.FYP.shramik1.Admin;
 import com.FYP.shramik1.User;
 import com.FYP.shramik1.Worker;
+import com.FYP.shramik1.Repository.AdminRepository;
 import com.FYP.shramik1.Repository.UserRepository;
 import com.FYP.shramik1.Repository.WorkerRepository;
 
@@ -18,7 +20,7 @@ public class LoginService {
 	UserRepository repo;
 	
 	@Autowired
-	WorkerRepository repository;
+	AdminRepository repository;
 
 	public boolean findByName(String userName) {
 		User user= repo.findByUserName(userName);
@@ -46,10 +48,20 @@ public class LoginService {
 		
 	}
 	
-	public Worker insertWorker(Worker worker) {
-		
-		return repository.save(worker);
-		
+	public boolean findByNameAdmin(String userName) {
+		Admin admin= repository.findByUserName(userName);
+		if(admin !=null)
+			  return true;
+			else
+				return false;
+	}
+
+	public boolean findByPassAdmin(String password) {
+		Admin admin= repository.findByPassword(password);
+		if(admin !=null)
+	    return true;
+	    else
+	    return false;
 	}
 
 	
