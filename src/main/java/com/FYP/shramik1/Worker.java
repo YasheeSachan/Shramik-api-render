@@ -13,21 +13,24 @@ public class Worker {
 	private String mobNumber;
 	private String category;
 	private String subCategory;
+	private String staticLocation;
 	
 	public Worker() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Worker(BigInteger id, String userName, String mobNumber, String category, String subCategory) {
+	public Worker(BigInteger id, String userName, String mobNumber, String category, String subCategory,
+			String staticLocation) {
 		super();
 		this.id = id;
 		this.userName = userName;
 		this.mobNumber = mobNumber;
 		this.category = category;
 		this.subCategory = subCategory;
+		this.staticLocation = staticLocation;
 	}
-
+	
 	public BigInteger getId() {
 		return id;
 	}
@@ -68,10 +71,19 @@ public class Worker {
 		this.subCategory = subCategory;
 	}
 
+
+	public String getStaticLocation() {
+		return staticLocation;
+	}
+
+	public void setStaticLocation(String staticLocation) {
+		this.staticLocation = staticLocation;
+	}
+	
 	@Override
 	public String toString() {
 		return "Worker [id=" + id + ", userName=" + userName + ", mobNumber=" + mobNumber + ", category=" + category
-				+ ", subCategory=" + subCategory + "]";
+				+ ", subCategory=" + subCategory + ", staticLocation=" + staticLocation + "]";
 	}
 	
 }
